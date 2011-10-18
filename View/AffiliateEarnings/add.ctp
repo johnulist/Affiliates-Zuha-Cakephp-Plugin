@@ -1,7 +1,7 @@
 <div class="affiliateEarnings form">
 <?php echo $this->Form->create('AffiliateEarning');?>
 	<fieldset>
- 		<legend><?php __('Add Affiliate Earning'); ?></legend>
+ 		<legend><?php echo __('Add Affiliate Earning'); ?></legend>
 	<?php
 		echo $this->Form->input('name');
 		echo $this->Form->input('amount');
@@ -14,7 +14,7 @@
 <?php echo $this->Form->end(__('Submit', true));?>
 </div>
 <div class="actions">
-	<h3><?php __('Actions'); ?></h3>
+	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
 
 		<li><?php echo $this->Html->link(__('List Affiliate Earnings', true), array('action' => 'index'));?></li>

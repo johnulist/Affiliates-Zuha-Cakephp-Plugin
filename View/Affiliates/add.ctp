@@ -1,7 +1,7 @@
 <div class="affiliates form">
 <?php echo $this->Form->create('Affiliate');?>
 	<fieldset>
- 		<legend><?php __('Add Affiliate'); ?></legend>
+ 		<legend><?php echo __('Add Affiliate'); ?></legend>
 	<?php
 		echo $this->Form->input('parent_id');
 		echo $this->Form->input('referral_key');
@@ -11,7 +11,7 @@
 <?php echo $this->Form->end(__('Submit', true));?>
 </div>
 <div class="actions">
-	<h3><?php __('Actions'); ?></h3>
+	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
 
 		<li><?php echo $this->Html->link(__('List Affiliates', true), array('action' => 'index'));?></li>
