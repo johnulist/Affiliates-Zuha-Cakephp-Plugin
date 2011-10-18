@@ -18,9 +18,9 @@ class AffiliatesController extends AppController {
 	}
 
 	function add() {
-		if (!empty($this->data)) {
+		if (!empty($this->request->data)) {
 			$this->Affiliate->create();
-			if ($this->Affiliate->save($this->data)) {
+			if ($this->Affiliate->save($this->request->data)) {
 				$this->Session->setFlash(__('The affiliate has been saved', true));
 				$this->redirect(array('action' => 'index'));
 			} else {
@@ -33,20 +33,20 @@ class AffiliatesController extends AppController {
 	}
 
 	function edit($id = null) {
-		if (!$id && empty($this->data)) {
+		if (!$id && empty($this->request->data)) {
 			$this->Session->setFlash(__('Invalid affiliate', true));
 			$this->redirect(array('action' => 'index'));
 		}
-		if (!empty($this->data)) {
-			if ($this->Affiliate->save($this->data)) {
+		if (!empty($this->request->data)) {
+			if ($this->Affiliate->save($this->request->data)) {
 				$this->Session->setFlash(__('The affiliate has been saved', true));
 				$this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The affiliate could not be saved. Please, try again.', true));
 			}
 		}
-		if (empty($this->data)) {
-			$this->data = $this->Affiliate->read(null, $id);
+		if (empty($this->request->data)) {
+			$this->request->data = $this->Affiliate->read(null, $id);
 		}
 		$parents = $this->Affiliate->ParentAffiliate->find('list');
 		$users = $this->Affiliate->User->find('list');
@@ -80,9 +80,9 @@ class AffiliatesController extends AppController {
 	}
 
 	function admin_add() {
-		if (!empty($this->data)) {
+		if (!empty($this->request->data)) {
 			$this->Affiliate->create();
-			if ($this->Affiliate->save($this->data)) {
+			if ($this->Affiliate->save($this->request->data)) {
 				$this->Session->setFlash(__('The affiliate has been saved', true));
 				$this->redirect(array('action' => 'index'));
 			} else {
@@ -95,20 +95,20 @@ class AffiliatesController extends AppController {
 	}
 
 	function admin_edit($id = null) {
-		if (!$id && empty($this->data)) {
+		if (!$id && empty($this->request->data)) {
 			$this->Session->setFlash(__('Invalid affiliate', true));
 			$this->redirect(array('action' => 'index'));
 		}
-		if (!empty($this->data)) {
-			if ($this->Affiliate->save($this->data)) {
+		if (!empty($this->request->data)) {
+			if ($this->Affiliate->save($this->request->data)) {
 				$this->Session->setFlash(__('The affiliate has been saved', true));
 				$this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The affiliate could not be saved. Please, try again.', true));
 			}
 		}
-		if (empty($this->data)) {
-			$this->data = $this->Affiliate->read(null, $id);
+		if (empty($this->request->data)) {
+			$this->request->data = $this->Affiliate->read(null, $id);
 		}
 		$parents = $this->Affiliate->ParentAffiliate->find('list');
 		$users = $this->Affiliate->User->find('list');
