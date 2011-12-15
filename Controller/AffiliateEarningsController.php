@@ -1,7 +1,8 @@
 <?php
 class AffiliateEarningsController extends AffiliatesAppController {
 
-	var $name = 'AffiliateEarnings';
+	public $name = 'AffiliateEarnings';
+	public $uses = 'Affiliates.AffiliateEarning';
 
 	function index() {
 		$this->AffiliateEarning->recursive = 0;
