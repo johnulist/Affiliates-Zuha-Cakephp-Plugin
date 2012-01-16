@@ -17,7 +17,7 @@ $this->set('context_menu', array('menus' => array(
 	array(
 		'heading' => 'Affiliates',
 		'items' => array(
-			$this->Html->link(__('Delete', true), array('action' => 'delete', $this->Form->value('Affiliate.id')), null, sprintf(__('Are you sure you want to delete # %s?', true), $this->Form->value('Affiliate.id'))),
+			$this->Html->link(__('Delete', true), array('action' => 'delete', $this->Form->value('Affiliate.id')), null, sprintf(__('Are you sure you want to delete # %s?'), $this->Form->value('Affiliate.id'))),
 			$this->Html->link(__('List Affiliates', true), array('action' => 'index')),
 			$this->Html->link(__('List Users', true), array('plugin' => null, 'controller' => 'users', 'action' => 'index')),
 			)
